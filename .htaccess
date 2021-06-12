@@ -1,0 +1,8 @@
+Options All -Indexes
+Header set X-XSS-Protection "1; mode=block"
+Header always append X-Frame-Options SAMEORIGIN
+Header set X-Content-Type-Options nosniff
+RewriteEngine On
+
+RewriteRule ^login$ scripts/auth_actions.php [NC,L]
+RewriteRule ^search$ scripts/stock_data.php [NC,L]
